@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "1adbf0c0-4e05-4acf-82ad-7b445034e1e1",
+		"name": "VeraciousCaller",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30330291"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone_number\": 12345678933,\r\n    \"name\":\"test\",\r\n    \"password\":\"test12345\",\r\n    \"email\":\"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/auth/register/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ContactList",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone_number\": 1234567893,\r\n    \"name\":\"test\",\r\n    \"password\":\"test12345\",\r\n    \"email\":\"test@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/contact/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"contact",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contact search name",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MzQwMDYwLCJpYXQiOjE3MTUzMzY0NjAsImp0aSI6IjJlMWI2NzM5NGQ3NDRhNmZhYjZmMTQ4M2M3MDVmM2YyIiwidXNlcl9pZCI6M30.8A5dUM2R9xVXFjDxnqXHSeQ6yJTLiw6AmzZJfjlhRoE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"query\":\"kall\",\r\n    \"phone_number\": 1234567893,\r\n    \"name\":\"aryan\",\r\n    \"password\":\"aryan123\",\r\n    \"email\":\"aplam@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/contact/search\\kall",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"contact",
+						"search",
+						"kall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contact search number",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MzQwMDYwLCJpYXQiOjE3MTUzMzY0NjAsImp0aSI6IjJlMWI2NzM5NGQ3NDRhNmZhYjZmMTQ4M2M3MDVmM2YyIiwidXNlcl9pZCI6M30.8A5dUM2R9xVXFjDxnqXHSeQ6yJTLiw6AmzZJfjlhRoE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/contact/search/phone/1234567871",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"contact",
+						"search",
+						"phone",
+						"1234567871"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetContact",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MzM2MzU1LCJpYXQiOjE3MTUzMzI3NTUsImp0aSI6ImI3MzE3NDg4MzdjNDRjN2ZiMDA5NjdhZDQzMjY1YTczIiwidXNlcl9pZCI6M30.UWnXNFydWnHWm-QnKhU-XZc0rBfiAMUaC7_tLpTlOKM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/contact/222",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"contact",
+						"222"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contact Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MzQwMDYwLCJpYXQiOjE3MTUzMzY0NjAsImp0aSI6IjJlMWI2NzM5NGQ3NDRhNmZhYjZmMTQ4M2M3MDVmM2YyIiwidXNlcl9pZCI6M30.8A5dUM2R9xVXFjDxnqXHSeQ6yJTLiw6AmzZJfjlhRoE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone_number\": 1234567874,\r\n    \"name\":\"444\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/contact/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"contact",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone_number\": 1234567893,\r\n    \"password\":\"test1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/auth/login/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
